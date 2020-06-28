@@ -1,4 +1,5 @@
 import React from "react";
+import CovidVsWorldLogo from '../assets/covid19.png';
 
 export default function footer() {
   return (
@@ -115,7 +116,9 @@ export default function footer() {
             {/* > */}
               
             {/* </a> */}
+            <img src={CovidVsWorldLogo} alt="Logo" class="text-white w-6 h-6 inline-flex sm:ml-auto justify-center sm:justify-start"/>
           </p>
+          
           <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
             <p class="text-gray-500 text-sm">Maintained By- MS Rehman</p>
             {/*<a class="text-gray-500">
