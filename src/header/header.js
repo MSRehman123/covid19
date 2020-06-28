@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMask, faHeadSideMask } from '@fortawesome/free-solid-svg-icons';
+import CovidVsWorldLogo from '../assets/covid19.png';
 
 export class header extends Component {
   render() {
@@ -20,6 +21,7 @@ export class header extends Component {
             >
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
             </svg> */}
+            <img src={CovidVsWorldLogo} alt="Logo" class="w-10 h-10 text-white p-2"/>
             <span class="ml-3 text-xl">Covid Vs World</span>
           </a>
           <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
