@@ -29,7 +29,7 @@ export default function covidHomePage() {
         <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
           <img
             class="object-cover object-center rounded"
-            alt="hero"
+            alt="cornavirus"
             src="https://source.unsplash.com/720x600/?covid19,coronavirus"
           />
         </div>
