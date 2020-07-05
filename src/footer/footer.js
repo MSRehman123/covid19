@@ -107,7 +107,7 @@ export default function footer() {
       <div class="bg-gray-200">
         <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
           <p class="text-gray-500 text-sm text-center sm:text-left">
-            © 2020 covidVsworld
+            © 2020 covid-world
              {/* <a */}
             {/* //   href="https://twitter.com/knyttneve"
             //   rel="noopener noreferrer"
@@ -116,7 +116,7 @@ export default function footer() {
             {/* > */}
               
             {/* </a> */}
-            <img src={CovidVsWorldLogo} alt="Logo" class="text-white w-6 h-6 inline-flex sm:ml-auto justify-center sm:justify-start"/>
+            <img src={CovidVsWorldLogo} alt="Logo" class="text-white w-6 h-6 inline-flex sm:ml-auto justify-center sm:justify-start"/> -v1.0.0
           </p>
           
           <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">

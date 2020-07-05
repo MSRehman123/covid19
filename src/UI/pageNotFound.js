@@ -1,9 +1,19 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faVirus } from "@fortawesome/free-solid-svg-icons";
+import Spinner from './spinner';
 
-export default function pageNotFound() {
+export default function PageNotFound() {
+  const [Loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false)
+    }, 3000)
+  }, [])
+
   return (
+    Loading ? <Spinner loading={Loading} /> :
     <div class="flex flex-wrap text-center">
       <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 text-center">
         <img

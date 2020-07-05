@@ -1,10 +1,20 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Quote from "../../quotes/quote";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Spinner from '../../UI/spinner';
 import { faHandsWash, faHandshakeSlash, faHeartbeat, faHeadSideCough, faLungsVirus, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
-export default function prevent() {
+export default function Prevent() {
+  const [Loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false)
+    }, 3000)
+  }, [])
+
   return (
+    Loading ? <Spinner loading={Loading} /> :
     <div>
       <section class="text-gray-700 body-font">
         <div class="container px-5 py-24 mx-auto flex flex-wrap">
