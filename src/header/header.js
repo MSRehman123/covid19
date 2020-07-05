@@ -4,9 +4,18 @@ import { faHeadSideMask } from "@fortawesome/free-solid-svg-icons";
 import CovidVsWorldLogo from "../assets/covid19.png";
 
 export class header extends Component {
+  state = {
+    Loading: true
+  }
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({Loading: false})
+    }, 3000);
+  }
+
   render() {
     return (
-      <header class="text-gray-700 body-font">
+      <header class={this.state.Loading ? "text-gray-700 body-font opacity-25" : "text-gray-700 body-font"}>
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
             <img
@@ -27,7 +36,7 @@ export class header extends Component {
               class="mr-5 text-indigo-500 hover:text-gray-900 focus:text-green-500"
               href="/prevention"
             >
-              Prevention
+              Measures
             </a>
             {/*<a class="mr-5 hover:text-gray-900">Third Link</a>
             <a class="mr-5 hover:text-gray-900">Fourth Link</a> */}

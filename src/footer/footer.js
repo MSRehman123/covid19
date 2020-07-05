@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import CovidVsWorldLogo from '../assets/covid19.png';
 
-export default function footer() {
+export default function Footer() {
+  const [Loading, setLoading] = useState(true)
+  
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000)
+  }, [])
+
   return (
-    <footer class="text-gray-700 body-font">
+    <footer class={Loading ? "text-gray-700 body-font opacity-25" : "text-gray-700 body-font"}>
       {/* <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-no-wrap flex-wrap flex-col">
         <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
           <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
@@ -107,7 +115,7 @@ export default function footer() {
       <div class="bg-gray-200">
         <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
           <p class="text-gray-500 text-sm text-center sm:text-left">
-            © 2020 covid-world
+            © 2020 covid-work.tk
              {/* <a */}
             {/* //   href="https://twitter.com/knyttneve"
             //   rel="noopener noreferrer"
@@ -120,8 +128,9 @@ export default function footer() {
           </p>
           
           <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
-            <p class="text-gray-500 text-sm">Maintained By- MS Rehman</p>
+            <p class="text-gray-500 text-sm">Maintained By- <b>M S Rehman</b></p>
             {/*<a class="text-gray-500">
+            
               <svg
                 fill="currentColor"
                 stroke-linecap="round"

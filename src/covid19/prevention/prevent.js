@@ -20,10 +20,10 @@ export default function Prevent() {
         <div class="container px-5 py-24 mx-auto flex flex-wrap">
         <div class="flex flex-col text-center w-full mb-20">
               <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
-                'Follow Preventive Measures'
+                'Follow These Measures'
               </h1>
               <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
-                As covid19 has become a part of our life include this <b>Preventive Measures</b> to avoid getting infected..
+                As covid19 has become a part of our life Follow this <b>Measures</b>..
               </p>
             </div>
           <div class="flex relative pt-10 pb-20 sm:items-center md:w-2/3 mx-auto">
@@ -110,7 +110,7 @@ export default function Prevent() {
               </div>
               <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
                 <h2 class="font-medium title-font text-gray-900 mb-1 text-xl">
-                  Have Minor Symptons
+                  Have Minor Symptons?
                 </h2>
                 <p class="leading-relaxed">
                   If you have minor cough, cold or fever <b>Stay Home</b> and{" "}

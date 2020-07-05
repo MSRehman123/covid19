@@ -11,6 +11,7 @@ import { Row, Col, Table } from "antd";
 import "antd/dist/antd.css";
 import Search from "./search/search";
 import Spinner from '../UI/spinner';
+import Moment from 'react-moment';
 
 const columnsIndia = [
   {
@@ -39,7 +40,8 @@ class indiaCovid extends Component {
   state = {
     indiaCovid: [],
     stateIndia: [],
-    searchText: "",
+    searchText: '',
+    indiaUpdated: '',
     Loading: true
   };
 
@@ -49,7 +51,8 @@ class indiaCovid extends Component {
       .get("https://api.rootnet.in/covid19-in/stats/latest")
       .then((res) => {
         const summary = res.data.data.summary;
-        this.setState({ indiaCovid: summary });
+        const updated = res.data.data.lastRefreshed;
+        this.setState({ indiaCovid: summary, indiaUpdated: updated });
         this.setState({
           stateIndia: res.data.data.regional.map((row) => ({
             state: row.loc,
@@ -82,6 +85,8 @@ class indiaCovid extends Component {
         <section class="text-gray-700 body-font">
           <div class="container px-5 py-24 mx-auto">
             <div class="flex flex-col text-center w-full mb-20">
+            <b>Last updated</b>
+              <Moment fromNow>{this.state.indiaUpdated}</Moment>
               <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
                 'India doing its best aganist Pandemic'
               </h1>
