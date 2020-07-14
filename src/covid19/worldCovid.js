@@ -16,41 +16,46 @@ import Spinner from '../UI/spinner';
 // object to store data.
 const columns = [
   {
-    title: "country",
+    title: "Country",
     dataIndex: "country",
+    width: 120,
+    fixed: 'left'
   },
   {
     title: "NewConfirmed",
     dataIndex: "NewConfirmed",
     sorter: (a, b) => a.NewConfirmed - b.NewConfirmed,
-    responsive: ["lg", "xl", "md"],
+    width: 120
   },
   {
     title: "NewDeaths",
     dataIndex: "NewDeaths",
     sorter: (a, b) => a.NewRecovered - b.NewRecovered,
-    responsive: ["lg", "xl", "md"],
+    width: 120
   },
   {
     title: "New Recovered",
     dataIndex: "NewRecovered",
     sorter: (a, b) => a.NewRecovered - b.NewRecovered,
-    responsive: ["lg", "xl", "md"],
+    width: 120
   },
   {
     title: "Total Confirmed",
     dataIndex: "TotalConfirmed",
     sorter: (a, b) => a.TotalConfirmed - b.TotalConfirmed,
+    width: 120
   },
   {
     title: "Total Deaths",
     dataIndex: "TotalDeaths",
     sorter: (a, b) => a.TotalDeaths - b.TotalDeaths,
+    width: 120
   },
   {
     title: "Total Recovered",
     dataIndex: "TotalRecovered",
     sorter: (a, b) => a.TotalRecovered - b.TotalRecovered,
+    width: 120
   },
 ];
 
@@ -112,7 +117,7 @@ class worldCovid extends Component {
           <div class="container px-5 py-24 mx-auto">
             <div class="flex flex-col text-center w-full mb-20">
               <b>Last updated</b>
-              <Moment fromNow>{this.state.updated}</Moment>
+              <Moment fromNow class="tracking-widest text-center">{this.state.updated}</Moment>
               <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
                 'Whole world is fighting this Pandemic'
               </h1>
@@ -177,6 +182,7 @@ class worldCovid extends Component {
               columns={columns}
               indentSize={10}
               size="small"
+              scroll={{ x: 200 }}
             />
           </div>
         </section>

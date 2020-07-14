@@ -17,21 +17,26 @@ const columnsIndia = [
   {
     title: "State",
     dataIndex: "state",
+    width: 150,
+    fixed: 'left'
   },
   {
     title: "Total Confirmed",
     dataIndex: "totalConfirmed",
     sorter: (a, b) => a.totalConfirmed - b.totalConfirmed,
+    width: 150
   },
   {
     title: "Total Deaths",
     dataIndex: "deaths",
     sorter: (a, b) => a.deaths - b.deaths,
+    width: 150
   },
   {
     title: "Total Recovered",
     dataIndex: "discharged",
     sorter: (a, b) => a.discharged - b.discharged,
+    width: 150
   },
 ];
 
@@ -51,7 +56,7 @@ class indiaCovid extends Component {
       .get("https://api.rootnet.in/covid19-in/stats/latest")
       .then((res) => {
         const summary = res.data.data.summary;
-        const updated = res.data.data.lastRefreshed;
+        const updated = res.data.lastRefreshed;
         this.setState({ indiaCovid: summary, indiaUpdated: updated });
         this.setState({
           stateIndia: res.data.data.regional.map((row) => ({
@@ -86,14 +91,13 @@ class indiaCovid extends Component {
           <div class="container px-5 py-24 mx-auto">
             <div class="flex flex-col text-center w-full mb-20">
             <b>Last updated</b>
-              <Moment fromNow>{this.state.indiaUpdated}</Moment>
+              <Moment fromNow class="tracking-widest text-center">{this.state.indiaUpdated}</Moment>
               <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
                 'India doing its best aganist Pandemic'
               </h1>
               <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
                 The statistics here are only related to india.
-                <br /> If you wanna see the statistics related to all over the
-                world please visit the world section.
+                <br /> To see data related to your <b>District</b> <a href="/india/districts">Click Here</a>
               </p>
             </div>
             <div class="flex flex-wrap -m-4 text-center">
@@ -151,6 +155,7 @@ class indiaCovid extends Component {
             columns={columnsIndia}
             indentSize={10}
             size="small"
+            scroll={{ x: 200 }}
           />
         </section>
       </div>
