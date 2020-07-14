@@ -37,7 +37,6 @@ function News() {
         parser = new DOMParser();
         xmlDoc = parser.parseFromString(res.data, "text/xml");
         jsonData = xmlToJson(xmlDoc);
-        console.log(jsonData);
         setdisasterNews(jsonData.rss.channel.item);
         setLoading(false);
       })

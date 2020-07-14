@@ -54,7 +54,6 @@ class Districtwise extends Component {
       axios.get('https://api.covid19india.org/state_district_wise.json')
       .then((res) => {
         this.setState({ district: res.data });
-        console.log(res)
         const data = this.state.district;
         this.setState({ indState: Object.keys(data) });
       })
