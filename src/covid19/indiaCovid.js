@@ -97,7 +97,7 @@ class indiaCovid extends Component {
               </h1>
               <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
                 The statistics here are only related to india.
-                <br /> To see data related to your <b>District</b> <a href="/india/districts">Click Here</a>
+                <br /> To see data related to your <b>District</b> <a href="/india/districts" class="text-indigo-500">Click Here</a>
               </p>
             </div>
             <div class="flex flex-wrap -m-4 text-center">

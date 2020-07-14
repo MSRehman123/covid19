@@ -14,7 +14,7 @@ export default function CovidHomePage() {
   return (
     Loading ? <Spinner loading={Loading} /> :
     <section className="text-gray-700 body-font">
-      <marquee behavior="scroll" direction="left" className="mt-10 text-gray-500"><h3><b className="text-red-500">India only feature :</b> now you can see your district data. Please visit india section or <a href="/india/districts">click here</a></h3></marquee>
+      <marquee behavior="scroll" direction="left" className="mt-10"><h3 className="text-gray-500"><b className="text-red-500">India only feature :</b> now you can see your district data. Please visit india section or <a href="/india/districts" class="text-indigo-500">click here</a></h3></marquee>
       <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
         <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
           <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">

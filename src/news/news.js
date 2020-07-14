@@ -13,6 +13,7 @@ function News() {
   const [tabtoggle, settabtoggle] = useState(true);
   const [data, setdata] = useState([]);
 
+  //calling api to fetch news
   const getMainNews = () => {
     let xmlDoc, jsonData, parser;
     axios
