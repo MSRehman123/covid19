@@ -10,33 +10,34 @@ import "./covid.css";
 import { Row, Col, Table } from "antd";
 import "antd/dist/antd.css";
 import Search from "./search/search";
-import Spinner from '../UI/spinner';
-import Moment from 'react-moment';
+import Spinner from "../UI/spinner";
+import Moment from "react-moment";
+import { NavLink } from "react-router-dom";
 
 const columnsIndia = [
   {
     title: "State",
     dataIndex: "state",
     width: 150,
-    fixed: 'left'
+    fixed: "left",
   },
   {
     title: "Total Confirmed",
     dataIndex: "totalConfirmed",
     sorter: (a, b) => a.totalConfirmed - b.totalConfirmed,
-    width: 150
+    width: 150,
   },
   {
     title: "Total Deaths",
     dataIndex: "deaths",
     sorter: (a, b) => a.deaths - b.deaths,
-    width: 150
+    width: 150,
   },
   {
     title: "Total Recovered",
     dataIndex: "discharged",
     sorter: (a, b) => a.discharged - b.discharged,
-    width: 150
+    width: 150,
   },
 ];
 
@@ -45,9 +46,9 @@ class indiaCovid extends Component {
   state = {
     indiaCovid: [],
     stateIndia: [],
-    searchText: '',
-    indiaUpdated: '',
-    Loading: true
+    searchText: "",
+    indiaUpdated: "",
+    Loading: true,
   };
 
   componentDidMount() {
@@ -69,9 +70,9 @@ class indiaCovid extends Component {
         });
       })
       .catch((err) => <h1>Oops Reload again</h1>);
-      setTimeout(() => {
-        this.setState({Loading: false})
-      }, 3000)
+    setTimeout(() => {
+      this.setState({ Loading: false });
+    }, 3000);
   }
 
   onChange = (e) => {
@@ -84,20 +85,26 @@ class indiaCovid extends Component {
         .toLowerCase()
         .includes(this.state.searchText.toLowerCase());
     });
-    return (
-      this.state.Loading? <Spinner loading={this.state.Loading} /> :
+    return this.state.Loading ? (
+      <Spinner loading={this.state.Loading} />
+    ) : (
       <div>
         <section class="text-gray-700 body-font">
           <div class="container px-5 py-24 mx-auto">
             <div class="flex flex-col text-center w-full mb-20">
-            <b>Last updated</b>
-              <Moment fromNow class="tracking-widest text-center">{this.state.indiaUpdated}</Moment>
+              <b>Last updated</b>
+              <Moment fromNow class="tracking-widest text-center">
+                {this.state.indiaUpdated}
+              </Moment>
               <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
                 'India doing its best aganist Pandemic'
               </h1>
               <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
                 The statistics here are only related to india.
-                <br /> To see data related to your <b>District</b> <a href="/india/districts" class="text-indigo-500">Click Here</a>
+                <br /> To see data related to your <b>District</b>{" "}
+                <NavLink to="/india/districts" class="text-indigo-500">
+                  Click Here
+                </NavLink>
               </p>
             </div>
             <div class="flex flex-wrap -m-4 text-center">

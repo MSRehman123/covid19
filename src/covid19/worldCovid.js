@@ -11,7 +11,7 @@ import { Table } from "antd";
 import "antd/dist/antd.css";
 import Search from "./search/search";
 import Moment from "react-moment";
-import Spinner from '../UI/spinner';
+import Spinner from "../UI/spinner";
 
 // object to store data.
 const columns = [
@@ -19,43 +19,43 @@ const columns = [
     title: "Country",
     dataIndex: "country",
     width: 120,
-    fixed: 'left'
+    fixed: "left",
   },
   {
     title: "NewConfirmed",
     dataIndex: "NewConfirmed",
     sorter: (a, b) => a.NewConfirmed - b.NewConfirmed,
-    width: 120
+    width: 120,
   },
   {
     title: "NewDeaths",
     dataIndex: "NewDeaths",
     sorter: (a, b) => a.NewRecovered - b.NewRecovered,
-    width: 120
+    width: 120,
   },
   {
     title: "New Recovered",
     dataIndex: "NewRecovered",
     sorter: (a, b) => a.NewRecovered - b.NewRecovered,
-    width: 120
+    width: 120,
   },
   {
     title: "Total Confirmed",
     dataIndex: "TotalConfirmed",
     sorter: (a, b) => a.TotalConfirmed - b.TotalConfirmed,
-    width: 120
+    width: 120,
   },
   {
     title: "Total Deaths",
     dataIndex: "TotalDeaths",
     sorter: (a, b) => a.TotalDeaths - b.TotalDeaths,
-    width: 120
+    width: 120,
   },
   {
     title: "Total Recovered",
     dataIndex: "TotalRecovered",
     sorter: (a, b) => a.TotalRecovered - b.TotalRecovered,
-    width: 120
+    width: 120,
   },
 ];
 
@@ -67,7 +67,7 @@ class worldCovid extends Component {
     covidGlobal: [],
     searchText: "",
     worldUpdated: "",
-    Loading: true
+    Loading: true,
   };
 
   componentDidMount() {
@@ -94,9 +94,9 @@ class worldCovid extends Component {
         this.setState({ covidGlobal: global });
       })
       .catch((err) => <h1>Oops Reload again</h1>);
-      setTimeout(() => {
-        this.setState({Loading: false})
-      }, 3000)
+    setTimeout(() => {
+      this.setState({ Loading: false });
+    }, 3000);
   }
 
   onChange = (e) => {
@@ -110,14 +110,17 @@ class worldCovid extends Component {
         .toLowerCase()
         .includes(this.state.searchText.toLowerCase());
     });
-    return (
-      this.state.Loading ? <Spinner loading={this.state.Loading} /> :
+    return this.state.Loading ? (
+      <Spinner loading={this.state.Loading} />
+    ) : (
       <div>
         <section class="text-gray-700 body-font">
           <div class="container px-5 py-24 mx-auto">
             <div class="flex flex-col text-center w-full mb-20">
               <b>Last updated</b>
-              <Moment fromNow class="tracking-widest text-center">{this.state.updated}</Moment>
+              <Moment fromNow class="tracking-widest text-center">
+                {this.state.updated}
+              </Moment>
               <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
                 'Whole world is fighting this Pandemic'
               </h1>
